@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - 最终预览</title>
+    <title>HengOngBet Landing Page - CTA再缩小一点</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -23,94 +23,223 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            box-sizing: border-box;
         }
 
-        .image-container {
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
             position: relative;
-            display: inline-block;
-            max-width: 100%;
+        }
+
+        /* Background Layer - z-index: 1 */
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
         }
 
         .background-image {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100vh;
+            object-fit: contain;
             max-width: 100%;
         }
 
-        .cta-button {
+        /* CTA Layer - z-index: 10 */
+        .cta-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 10;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .premium-cta {
             position: absolute;
-            bottom: 22%;
-            left: 50%;
+            top: 38%;
+            left: 35%;
             transform: translateX(-50%);
             cursor: pointer;
-            width: 380px;
-            height: 70px;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid #333;
+            pointer-events: all;
+            width: 320px;
+            height: 64px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffd700 50%, #ffaa00 75%, #ff8c00 100%);
+            border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-            transition: all 0.3s ease;
-            animation: pulse 1.5s ease-in-out infinite;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 32px rgba(255, 107, 53, 0.4),
+                0 4px 16px rgba(247, 147, 30, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            border: 3px solid #ffd700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: pulse-glow 2s ease-in-out infinite, breathe-scale 3s ease-in-out infinite;
         }
 
-        .cta-button:hover {
-            transform: translateX(-50%) scale(1.05);
-            background: linear-gradient(135deg, #e55a2b 0%, #e8841a 50%, #e6c200 100%);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        .premium-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
         }
 
-        @keyframes pulse {
+        .premium-cta:hover::before {
+            left: 100%;
+        }
+
+        .premium-cta:hover {
+            transform: translateX(-50%) translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 16px 48px rgba(255, 107, 53, 0.6),
+                0 8px 24px rgba(247, 147, 30, 0.4),
+                inset 0 2px 6px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+            border-color: #fff;
+        }
+
+        .cta-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 8px rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-icon {
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 8px 32px rgba(255, 107, 53, 0.4),
+                    0 4px 16px rgba(247, 147, 30, 0.3),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 12px 40px rgba(255, 107, 53, 0.6),
+                    0 6px 20px rgba(247, 147, 30, 0.4),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes breathe-scale {
             0%, 100% {
                 transform: translateX(-50%) scale(1);
             }
             50% {
-                transform: translateX(-50%) scale(1.06);
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-4px);
+            }
+            60% {
+                transform: translateY(-2px);
             }
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .cta-button {
-                width: 320px;
-                height: 60px;
-                font-size: 18px;
-                bottom: 18%;
+            .premium-cta {
+                width: 280px;
+                height: 56px;
+                top: 36%;
+            }
+            .cta-text {
+                font-size: 14px;
+            }
+            .cta-icon {
+                font-size: 16px;
             }
         }
 
         @media (max-width: 480px) {
-            .cta-button {
-                width: 280px;
-                height: 55px;
-                font-size: 16px;
-                bottom: 12%;
+            .premium-cta {
+                width: 240px;
+                height: 52px;
+                top: 33%;
+            }
+            .cta-text {
+                font-size: 13px;
+            }
+            .cta-icon {
+                font-size: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="https://page.gensparksite.com/v1/base64_upload/8f765d8125b627fb1d277897475a88c8" alt="HengOngBet" class="background-image">
-        <a href="https://t.ly/HOBADS07" target="_blank" class="cta-button">
-            Claim Bonus Now
+    <!-- Background Layer -->
+    <div class="background-layer">
+        <img src="https://page.gensparksite.com/v1/base64_upload/8f765d8125b627fb1d277897475a88c8" alt="HengOngBet Background" class="background-image">
+    </div>
+
+    <!-- CTA Layer -->
+    <div class="cta-layer">
+        <a href="https://t.ly/HOBADS07" target="_blank" class="premium-cta">
+            <div class="cta-content">
+                <i class="fas fa-gift cta-icon"></i>
+                <span class="cta-text">Claim Bonus Now</span>
+                <i class="fas fa-arrow-right cta-icon"></i>
+            </div>
         </a>
     </div>
 </body>
