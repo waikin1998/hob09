@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - 步骤2最终版</title>
+    <title>HengOngBet Landing Page - CTA位置调整</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -49,29 +49,30 @@
 
         .cta-button {
             position: absolute;
-            bottom: 25%;
+            bottom: calc(25% - 37px);
             left: 50%;
             transform: translateX(-50%);
             cursor: pointer;
             width: 380px;
             height: 70px;
-            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
             color: white;
-            font-size: 20px;
-            font-weight: bold;
-            border: 2px solid #333;
-            border-radius: 8px;
             text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #333;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
             transition: all 0.3s ease;
             animation: pulse 1.5s ease-in-out infinite;
         }
 
         .cta-button:hover {
             transform: translateX(-50%) scale(1.05);
-            background: linear-gradient(135deg, #ff7700, #ffcc00);
+            background: linear-gradient(135deg, #e55a2b 0%, #e8841a 50%, #e6c200 100%);
         }
 
         @keyframes pulse {
@@ -86,10 +87,10 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .cta-button {
-                width: 300px;
+                width: 320px;
                 height: 60px;
                 font-size: 18px;
-                bottom: 20%;
+                bottom: calc(20% - 37px);
             }
         }
 
@@ -98,7 +99,7 @@
                 width: 280px;
                 height: 55px;
                 font-size: 16px;
-                bottom: 15%;
+                bottom: calc(15% - 37px);
             }
         }
     </style>
