@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - CTA特效版</title>
+    <title>HengOngBet Landing Page - 步骤2最终版</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -52,50 +52,43 @@
             bottom: 25%;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(45deg, #ff8c00, #ffd700);
-            color: white;
-            border: 2px solid #333;
-            border-radius: 8px;
-            padding: 20px 40px;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
             cursor: pointer;
             width: 380px;
             height: 70px;
-            text-align: center;
-            line-height: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #333;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
             animation: pulse 1.5s ease-in-out infinite;
         }
 
         .cta-button:hover {
-            transform: translateX(-50%) scale(1.1);
-            background: linear-gradient(45deg, #ff7700, #ffcc00);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: translateX(-50%) scale(1.05);
+            background: linear-gradient(135deg, #ff7700, #ffcc00);
         }
 
         @keyframes pulse {
-            0% {
+            0%, 100% {
                 transform: translateX(-50%) scale(1);
             }
             50% {
-                transform: translateX(-50%) scale(1.05);
-            }
-            100% {
-                transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1.06);
             }
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .cta-button {
-                width: 320px;
-                height: 65px;
-                font-size: 20px;
-                padding: 18px 35px;
+                width: 300px;
+                height: 60px;
+                font-size: 18px;
                 bottom: 20%;
             }
         }
@@ -103,9 +96,8 @@
         @media (max-width: 480px) {
             .cta-button {
                 width: 280px;
-                height: 60px;
-                font-size: 18px;
-                padding: 16px 30px;
+                height: 55px;
+                font-size: 16px;
                 bottom: 15%;
             }
         }
@@ -113,7 +105,7 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="https://gensparkstorageprodwest.blob.core.windows.net/web-drive/33882dc6-d06d-468e-aa21-b8b5b6647042/32a2eb37-fe4f-4d9a-bf04-d91e5d4bd6f9?se=2025-07-31T15%3A55%3A51Z&sp=r&sv=2025-05-05&sr=b&rscd=attachment%3B%20filename%3D%22new_background.jpg%22&sig=tE9XukheK//utnH1AV6J/ggozYndQNjgD4ovyc900PE%3D" alt="HengOngBet" class="background-image">
+        <img src="https://gensparkstorageprodwest.blob.core.windows.net/web-drive/33882dc6-d06d-468e-aa21-b8b5b6647042/f6e03ad8-e8c8-45d1-9696-001ca5a5905b?se=2025-07-31T16%3A14%3A23Z&sp=r&sv=2025-05-05&sr=b&rscd=attachment%3B%20filename%3D%22hengongbet_background.jpg%22&sig=oCrZdvdE1to/UcF4WZkquKqoASuYFf9C5xEe6lFje%2Bg%3D" alt="HengOngBet" class="background-image">
         <a href="https://t.ly/HOBADS07" target="_blank" class="cta-button">
             Claim Bonus Now
         </a>
