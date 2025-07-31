@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - Claim Bonus Now</title>
+    <title>HengOngBet Landing Page - CTA特效版</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -54,41 +54,58 @@
             transform: translateX(-50%);
             background: linear-gradient(45deg, #ff8c00, #ffd700);
             color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
             border: 2px solid #333;
             border-radius: 8px;
+            padding: 20px 40px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: Arial, sans-serif;
+            width: 380px;
+            height: 70px;
             text-align: center;
-            min-width: 200px;
+            line-height: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
         .cta-button:hover {
+            transform: translateX(-50%) scale(1.1);
             background: linear-gradient(45deg, #ff7700, #ffcc00);
-            transform: translateX(-50%) translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .cta-button {
-                font-size: 16px;
-                padding: 12px 25px;
-                min-width: 180px;
+                width: 320px;
+                height: 65px;
+                font-size: 20px;
+                padding: 18px 35px;
                 bottom: 20%;
             }
         }
 
         @media (max-width: 480px) {
             .cta-button {
-                font-size: 15px;
-                padding: 12px 20px;
-                min-width: 160px;
+                width: 280px;
+                height: 60px;
+                font-size: 18px;
+                padding: 16px 30px;
                 bottom: 15%;
             }
         }
