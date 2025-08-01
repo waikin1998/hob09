@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - 恢复原始CTA设置</title>
+    <title>HengOngBet Landing Page - 移动端CTA左移调整</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -130,6 +130,7 @@
                 inset 0 2px 6px rgba(255, 255, 255, 0.4),
                 inset 0 -2px 6px rgba(0, 0, 0, 0.3);
             border-color: #fff;
+            text-decoration: none !important;
         }
 
         .cta-content {
@@ -198,13 +199,13 @@
             }
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments - 移动端CTA左移1cm调整 */
         @media (max-width: 768px) {
             .premium-cta {
                 width: 350px;
                 height: 70px;
                 top: 38%;
-                left: 22%;
+                left: 12%; /* 从22%改为12%，向左移动约1cm */
             }
             .cta-text {
                 font-size: 18px;
@@ -219,7 +220,7 @@
                 width: 300px;
                 height: 65px;
                 top: 32%;
-                left: 50%;
+                left: 40%; /* 从50%改为40%，向左移动约1cm */
             }
             .cta-text {
                 font-size: 16px;
@@ -238,7 +239,7 @@
 
     <!-- CTA Layer -->
     <div class="cta-layer">
-        <a href="https://t.ly/HOBADS07" target="_blank" class="premium-cta">
+        <a href="https://hengongbet7.com" target="_blank" class="premium-cta">
             <div class="cta-content">
                 <i class="fas fa-gift cta-icon"></i>
                 <span class="cta-text">Claim Bonus Now</span>
