@@ -1,1 +1,113 @@
-undefined
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HengOngBet Landing Page</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '759411056484282');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=759411056484282&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .background-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        .cta-button {
+            position: absolute;
+            bottom: 0.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            max-width: 350px;
+            width: 25%;
+            min-width: 220px;
+            animation: pulse 1.5s ease-in-out infinite;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 8px 20px rgba(128, 0, 128, 0.3));
+            display: block;
+        }
+
+        .cta-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cta-button:hover {
+            transform: translateX(-50%) scale(1.1) translateY(-5px);
+            filter: drop-shadow(0 12px 25px rgba(128, 0, 128, 0.5));
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cta-button {
+                width: 35%;
+                min-width: 180px;
+                max-width: 250px;
+                bottom: 0.1%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cta-button {
+                width: 65%;
+                min-width: 180px;
+                max-width: 320px;
+                bottom: -1%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://page.gensparksite.com/v1/base64_upload/2d9a1998767df1a7893ccb1de12ed30c" alt="HengOngBet" class="background-image">
+        <a href="https://hengongbet7.com" target="_blank" class="cta-button" onclick="fbq('track', 'Contact');">
+            <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/a56e6b00-fcc6-4c9b-bba9-6400f86252c8" alt="领取奖励">
+        </a>
+    </div>
+</body>
+</html>
