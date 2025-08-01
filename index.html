@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HengOngBet Landing Page - 手机版CTA左移中间下移</title>
+    <title>HengOngBet Landing Page - 恢复原始CTA设置</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -23,6 +23,13 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
     
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -31,7 +38,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #000;
             min-height: 100vh;
             overflow-x: hidden;
@@ -80,8 +87,8 @@
             transform: translateX(-50%);
             cursor: pointer;
             pointer-events: all;
-            width: 320px;
-            height: 64px;
+            width: 400px;
+            height: 80px;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffd700 50%, #ffaa00 75%, #ff8c00 100%);
             border-radius: 50px;
             display: flex;
@@ -132,11 +139,10 @@
             gap: 12px;
             z-index: 2;
             position: relative;
-            text-decoration: none !important;
         }
 
         .cta-text {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 800;
             color: #fff;
             text-shadow: 
@@ -148,10 +154,9 @@
         }
 
         .cta-icon {
-            width: 19px;
-            height: 19px;
-            fill: #fff;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             animation: bounce 2s ease-in-out infinite;
         }
 
@@ -196,33 +201,31 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .premium-cta {
-                width: 280px;
-                height: 56px;
+                width: 350px;
+                height: 70px;
                 top: 38%;
                 left: 22%;
             }
             .cta-text {
-                font-size: 14px;
+                font-size: 18px;
             }
             .cta-icon {
-                width: 17px;
-                height: 17px;
+                font-size: 22px;
             }
         }
 
         @media (max-width: 480px) {
             .premium-cta {
-                width: 240px;
-                height: 52px;
+                width: 300px;
+                height: 65px;
                 top: 32%;
                 left: 50%;
             }
             .cta-text {
-                font-size: 13px;
+                font-size: 16px;
             }
             .cta-icon {
-                width: 16px;
-                height: 16px;
+                font-size: 20px;
             }
         }
     </style>
@@ -237,14 +240,9 @@
     <div class="cta-layer">
         <a href="https://t.ly/HOBADS07" target="_blank" class="premium-cta">
             <div class="cta-content">
-                <svg class="cta-icon" viewBox="0 0 24 24">
-                    <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm6 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v11z"/>
-                    <circle cx="12" cy="15" r="2"/>
-                </svg>
+                <i class="fas fa-gift cta-icon"></i>
                 <span class="cta-text">Claim Bonus Now</span>
-                <svg class="cta-icon" viewBox="0 0 24 24">
-                    <path d="M5 12h14m-7-7l7 7-7 7"/>
-                </svg>
+                <i class="fas fa-arrow-right cta-icon"></i>
             </div>
         </a>
     </div>
